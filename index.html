@@ -27,10 +27,10 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="decrementItem1" class="btn btn-default item-increment"><i
+                           <button onclick="HandleProductQuantity(false, 'quantityOfItem1', 1219, 'priceOfItem1')" class="btn btn-default item-increment"><i
                                  class="fas fa-minus"></i></button>
                            <input readonly id="quantityOfItem1" type="text" class="form-control text-center" value="1">
-                           <button id="incrementItem1" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button onclick="HandleProductQuantity(true, 'quantityOfItem1', 1219, 'priceOfItem1')" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="priceOfItem1">1219</span></h5>
                         <img id="removeItem1" src="images/remove.png" alt="" class="remove-item">
@@ -46,10 +46,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button id="decrementItem2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button onclick="HandleProductQuantity(false, 'quantityOfItem2', 59, 'priceOfItem2')" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input readonly id="quantityOfItem2" type="text" class="form-control text-center" value="1">
-                           <button id="incrementItem2" class="btn btn-default"><i class="fas fa-plus"></i></button>
-
+                           <button onclick="HandleProductQuantity(true, 'quantityOfItem2', 59, 'priceOfItem2')" id="incrementItem2" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="priceOfItem2">59</span></h5>
                         <img id="removeItem2" src="images/remove.png" alt="" class="remove-item">
@@ -188,35 +187,35 @@
 
 
       // Item  One (Iphone) Quantity Increase
-      const increaseQuantityOne = document.getElementById('incrementItem1');
-      increaseQuantityOne.addEventListener('click', function () {
-         HandleProductQuantity(true, 'quantityOfItem1', 1219, 'priceOfItem1');
-      })
+      // const increaseQuantityOne = document.getElementById('incrementItem1');
+      // increaseQuantityOne.addEventListener('click', function () {
+      //    HandleProductQuantity(true, 'quantityOfItem1', 1219, 'priceOfItem1');
+      // })
 
-      // Item  One (Iphone) Quantity Decrease 
-      const decreaseQuantityOne = document.getElementById('decrementItem1');
-      decreaseQuantityOne.addEventListener('click', function () {
-         HandleProductQuantity(false, 'quantityOfItem1', 1219, 'priceOfItem1');
-      })
+      // // Item  One (Iphone) Quantity Decrease 
+      // const decreaseQuantityOne = document.getElementById('decrementItem1');
+      // decreaseQuantityOne.addEventListener('click', function () {
+      //    HandleProductQuantity(false, 'quantityOfItem1', 1219, 'priceOfItem1');
+      // })
 
       // Item  Two (Iphone Case) Quantity Increase
-      const increaseQuantityTwo = document.getElementById('incrementItem2');
-      increaseQuantityTwo.addEventListener('click', function(){
-         HandleProductQuantity(true, 'quantityOfItem2', 59, 'priceOfItem2');
-      })
+      // const increaseQuantityTwo = document.getElementById('incrementItem2');
+      // increaseQuantityTwo.addEventListener('click', function(){
+      //    HandleProductQuantity(true, 'quantityOfItem2', 59, 'priceOfItem2');
+      // })
 
-      // Item  Two (Iphone Case) Quantity Decrease 
-      const decreaseQuantityTwo = document.getElementById('decrementItem2');
-      decreaseQuantityTwo.addEventListener('click', function(){
-         HandleProductQuantity(false, 'quantityOfItem2', 59, 'priceOfItem2');
-      })
+      // // Item  Two (Iphone Case) Quantity Decrease 
+      // const decreaseQuantityTwo = document.getElementById('decrementItem2');
+      // decreaseQuantityTwo.addEventListener('click', function(){
+      //    HandleProductQuantity(false, 'quantityOfItem2', 59, 'priceOfItem2');
+      // })
 
       // Item Increase and Decrease Function 
       // এই ফাংশনে মোট চারটি প্যারামিটার নেয়া হয়েছে। 
       // প্রথম প্যারামিটারঃ কোয়ান্টিন্টি বাড়ানো কমানোর জন্য, (True, False)
       // দ্বিতীয় প্যারামিটারঃ কোন আইডিতে মুলত কোয়ান্টিটি, দাম, মোট দাম বাড়বে ও কমবে।
       // তৃতীয় প্যারামিটারঃ প্রোডাক্ট অনুযায়ী দাম এড করার জন্য। 
-      // চতুর্থ প্যারামিটারঃ ঐ প্রোডাক্টের দাম কত 
+      // চতুর্থ প্যারামিটারঃ ঐ প্রোডাক্টের দাম কত ফ
       function HandleProductQuantity(isIncrease, id, price, totalPrice) {
          const itemQuantity = document.getElementById(id);
          const itemQuantityValue = parseInt(itemQuantity.value);
@@ -235,7 +234,6 @@
          const quantityTotalPrice = itemQuantityCount * price;
          document.getElementById(totalPrice).innerText = quantityTotalPrice;
       }
-
 
 
 
