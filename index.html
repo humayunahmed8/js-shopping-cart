@@ -185,60 +185,106 @@
 
    <script>
 
+
+
       // Item  One (Iphone) Quantity Increase
       const increaseQuantityOne = document.getElementById('incrementItem1');
-      increaseQuantityOne.addEventListener('click', function(){
-         const itemQuantity = document.getElementById('quantityOfItem1');
-         const itemQuantityValue = parseInt(itemQuantity.value);
-         const increaseItemQuantity = itemQuantityValue + 1;
-
-         itemQuantity.value = increaseItemQuantity;
-
-         // Ex: Item One Price 1219 
-         const quantityTotalPrice = increaseItemQuantity * 1219;
-         document.getElementById('priceOfItem1').innerText = quantityTotalPrice;
-         
+      increaseQuantityOne.addEventListener('click', function () {
+         HandleProductQuantity(true);
       })
 
       // Item  One (Iphone) Quantity Decrease 
       const decreaseQuantityOne = document.getElementById('decrementItem1');
-      decreaseQuantityOne.addEventListener('click', function(){
+      decreaseQuantityOne.addEventListener('click', function () {
+         HandleProductQuantity(false);
+      })
+
+      // Item Increase and Decrease Function 
+      function HandleProductQuantity(isIncrease) {
          const itemQuantity = document.getElementById('quantityOfItem1');
          const itemQuantityValue = parseInt(itemQuantity.value);
-         const decreaseItemQuantity = itemQuantityValue - 1;
-         itemQuantity.value = decreaseItemQuantity;
+
+         let itemQuantityCount = itemQuantityValue;
+         if (isIncrease == true) {
+            itemQuantityCount = itemQuantityValue + 1;
+         }
+         if (isIncrease == false && itemQuantityValue > 0) {
+            itemQuantityCount = itemQuantityValue - 1;
+         }
+
+         itemQuantity.value = itemQuantityCount;
 
          // Ex: Item One Price 1219 
-         const quantityTotalPrice = decreaseItemQuantity * 1219;
+         const quantityTotalPrice = itemQuantityCount * 1219;
          document.getElementById('priceOfItem1').innerText = quantityTotalPrice;
-      })
+      }
 
-      // Item  Two (Iphone Case) Quantity Increase  
-      const increaseQuantityTwo = document.getElementById('incrementItem2');
-      increaseQuantityTwo.addEventListener('click', function(){
-         const itemQuantity = document.getElementById('quantityOfItem2');
-         const itemQuantityValue = parseInt(itemQuantity.value);
-         const increaseItemQuantity = itemQuantityValue + 1;
-         itemQuantity.value = increaseItemQuantity;
 
-         // Ex: Item One Price 59
-         const quantityTotalPrice = increaseItemQuantity * 59;
-         document.getElementById('priceOfItem2').innerText = quantityTotalPrice;
-      })
 
-      // Item  Two (Iphone Case) Quantity Decrease 
-      const decreaseQuantityTwo = document.getElementById('decrementItem2');
-      decreaseQuantityTwo.addEventListener('click', function(){
-         const itemQuantity = document.getElementById('quantityOfItem2');
-         const itemQuantityValue = parseInt(itemQuantity.value);
-         const decreaseItemQuantityTwo = itemQuantityValue - 1;
-         itemQuantity.value = decreaseItemQuantityTwo;
 
-         // Ex: Item One Price 59
-         const quantityTotalPrice = decreaseItemQuantityTwo * 59;
-         document.getElementById('priceOfItem2').innerText = quantityTotalPrice;
-      })
-    
+
+
+
+
+
+
+
+
+
+      // Item  One (Iphone) Quantity Increase
+      // const increaseQuantityOne = document.getElementById('incrementItem1');
+      // increaseQuantityOne.addEventListener('click', function(){
+      //    const itemQuantity = document.getElementById('quantityOfItem1');
+      //    const itemQuantityValue = parseInt(itemQuantity.value);
+      //    const increaseItemQuantity = itemQuantityValue + 1;
+
+      //    itemQuantity.value = increaseItemQuantity;
+
+      //    // Ex: Item One Price 1219 
+      //    const quantityTotalPrice = increaseItemQuantity * 1219;
+      //    document.getElementById('priceOfItem1').innerText = quantityTotalPrice;
+
+      // })
+
+      // // // Item  One (Iphone) Quantity Decrease 
+      // const decreaseQuantityOne = document.getElementById('decrementItem1');
+      // decreaseQuantityOne.addEventListener('click', function(){
+      //    const itemQuantity = document.getElementById('quantityOfItem1');
+      //    const itemQuantityValue = parseInt(itemQuantity.value);
+      //    const decreaseItemQuantity = itemQuantityValue - 1;
+      //    itemQuantity.value = decreaseItemQuantity;
+
+      //    // Ex: Item One Price 1219 
+      //    const quantityTotalPrice = decreaseItemQuantity * 1219;
+      //    document.getElementById('priceOfItem1').innerText = quantityTotalPrice;
+      // })
+
+      // // Item  Two (Iphone Case) Quantity Increase  
+      // const increaseQuantityTwo = document.getElementById('incrementItem2');
+      // increaseQuantityTwo.addEventListener('click', function(){
+      //    const itemQuantity = document.getElementById('quantityOfItem2');
+      //    const itemQuantityValue = parseInt(itemQuantity.value);
+      //    const increaseItemQuantity = itemQuantityValue + 1;
+      //    itemQuantity.value = increaseItemQuantity;
+
+      //    // Ex: Item One Price 59
+      //    const quantityTotalPrice = increaseItemQuantity * 59;
+      //    document.getElementById('priceOfItem2').innerText = quantityTotalPrice;
+      // })
+
+      // // Item  Two (Iphone Case) Quantity Decrease 
+      // const decreaseQuantityTwo = document.getElementById('decrementItem2');
+      // decreaseQuantityTwo.addEventListener('click', function(){
+      //    const itemQuantity = document.getElementById('quantityOfItem2');
+      //    const itemQuantityValue = parseInt(itemQuantity.value);
+      //    const decreaseItemQuantityTwo = itemQuantityValue - 1;
+      //    itemQuantity.value = decreaseItemQuantityTwo;
+
+      //    // Ex: Item One Price 59
+      //    const quantityTotalPrice = decreaseItemQuantityTwo * 59;
+      //    document.getElementById('priceOfItem2').innerText = quantityTotalPrice;
+      // })
+
    </script>
 </body>
 
